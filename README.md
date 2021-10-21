@@ -99,30 +99,43 @@ Additionally the component has a couple debug options if you’re having trouble
 ```markdown
 Bool ResetToFirstTree()
 This will set the current active tree to the first one in the list, instead of specifying a specific one. This can be useful if you only have one tree and don’t need to bother specifying its name. It will return whether this was successful. It may fail if there are no trees on the node.
+
 Bool Reset()
 This will reset the current node to the very first node in the tree. This may fail if the current tree is null. If so, you will want to use ResetToFirstTree() or SetTree(). It can also fail if the tree has no nodes.
+
 Void SetLocalization(String)
 This sets the current localization language to the one passed in via parameters. This is done on a component basis.
+
 String GetCurrentLocalizationSetting()
 Returns what current localization language the component is set to.
+
 Bool SetTree()
 This sets what tree we’re working in, and where the dialogue should be pulled from. Calling this function automatically resets the tree.
+
 String GetCurrentTreeName()
 Returns the name of the current tree.
+
 Bool IsEndOfTree()
 This simply returns whether the current node we’re looking at is an end node.
+
 Bool HasTrigger()
 Triggers whether this node has any triggers.
+
 String[] GetTriggers()
 Returns an array of all the triggers this node has.
+
 String GetFirstTrigger()
 Returns the first trigger in the list of triggers on the node. If this node has no triggers, return an empty string.
+
 String GetLastTrigger()
 Returns the last trigger in the list of triggers on the node. If this node has no triggers, return an empty string.
+
 Bool Next(Optional String)
 This moves our current node we’re looking at to the next node in the tree. It has an optional string that will allow selecting a choice if this is a decision node. It returns if it was successful. If this is the last node, it will return false. If it couldn’t find the given choice, it would return false. 
+
 String[] GetChoices()
 Returns an array of strings of all the choices this current node has stored.
+
 String GetCurrentDialogue()
 This returns the current dialogue of the node we’re looking at.
 ```
